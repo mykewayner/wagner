@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios Semana 5 - Redução da Ruminação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            color: white;
+            border-radius: 12px;
+            margin: -40px -20px 50px -20px;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .welcome-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #6c757d;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #495057;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e9ecef;
+            font-weight: 400;
+        }
+        
+        .subsection-title {
+            font-size: 1.4rem;
+            color: #6c757d;
+            margin: 30px 0 20px 0;
+            font-weight: 500;
+        }
+        
+        .exercise-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .exercise-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .exercise-title {
+            font-size: 1.6rem;
+            color: #495057;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .objective {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .objective strong {
+            color: #1976d2;
+        }
+        
+        .steps {
+            margin: 25px 0;
+        }
+        
+        .step {
+            margin: 15px 0;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #6c757d;
+        }
+        
+        .step-number {
+            font-weight: 700;
+            color: #495057;
+            margin-right: 10px;
+        }
+        
+        .important-box {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .important-title {
+            font-weight: 600;
+            color: #f57c00;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .myth-box {
+            background: #fce4ec;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #e91e63;
+        }
+        
+        .myth {
+            font-style: italic;
+            color: #c2185b;
+            margin-bottom: 8px;
+        }
+        
+        .truth {
+            color: #495057;
+            font-weight: 500;
+        }
+        
+        .theory-section {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 0.95rem;
+        }
+        
+        .theory-title {
+            font-size: 1.2rem;
+            color: #495057;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .cta-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .social-link {
+            color: #495057;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .social-link:hover {
+            color: #6c757d;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .quote {
+            font-style: italic;
+            text-align: center;
+            color: #6c757d;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Exercícios Semana 5</h1>
+            <p>Estratégias baseadas em evidências para reduzir a ruminação após términos de relacionamento</p>
+        </header>
+
+        <div class="welcome-box">
+            <p><strong>Seja bem-vinda(o)!</strong></p>
+            <p>Se você chegou até aqui é porque deve estar passando por uma <span class="highlight">dificuldade em lidar com o término de um relacionamento</span>. O que apresento aqui pode ser um apoio importante nesse processo tão desafiador.</p>
+            
+            <p>Tanto as pesquisas atuais quanto minha experiência clínica mostram algo importante: muitas vezes, o que prolonga a dor não é apenas o fim em si, mas a <strong>ruminação</strong>.</p>
+        </div>
+
+        <div class="important-box">
+            <div class="important-title">⚠️ Importante</div>
+            <p>Este material ficará no ar apenas até o fim da semana. Se quiser revisitar ou fazer o exercício em outro momento, faça o download para guardar com você.</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Ruminação: Por Que Não Consigo Parar de Pensar no Término?</h2>
+            
+            <h3 class="subsection-title">O que é ruminação?</h3>
+            <p>Pense na sua mente como um disco arranhado, que repete o mesmo trecho da música sem parar. A ruminação funciona de forma parecida: é voltar, várias e várias vezes, ao mesmo assunto doloroso, sem conseguir chegar a uma solução.</p>
+
+            <p><strong>Depois de um término, isso pode aparecer como:</strong></p>
+            <ul>
+                <li>Revisitar mentalmente os momentos do relacionamento</li>
+                <li>Ficar pensando: <em>"E se eu tivesse feito diferente?"</em></li>
+                <li>Buscar explicações que nunca parecem suficientes</li>
+            </ul>
+
+            <p>Esses pensamentos acabam se repetindo de forma cansativa, ocupando horas do seu dia. Muitas vezes, eles ainda se conectam a outros comportamentos, como stalkear em redes sociais, falar excessivamente sobre o assunto ou ter dificuldade de se concentrar em coisas importantes da sua vida.</p>
+
+            <h3 class="subsection-title">Como ela atrapalha a recuperação</h3>
+            <ul>
+                <li><strong>Mantém a ferida aberta:</strong> pensar repetidamente sobre o término é como cutucar uma ferida; a dor se reabre e a cicatrização emocional demora mais</li>
+                <li><strong>Intensifica emoções negativas:</strong> em vez de aliviar, aumenta a tristeza, a ansiedade e até a raiva</li>
+                <li><strong>Cria uma realidade paralela:</strong> mantém você preso(a) em cenários do passado, afastando do presente e das novas possibilidades</li>
+                <li><strong>Dá a ilusão de produtividade:</strong> parece que pensar sem parar vai trazer uma resposta ou solução, mas na prática não traz fechamento real</li>
+            </ul>
+
+            <h3 class="subsection-title">Mitos que reforçam a ruminação</h3>
+            
+            <div class="myth-box">
+                <div class="myth">"Se eu parar de pensar, significa que não amei de verdade."</div>
+                <div class="truth">→ Não. O amor se honra vivendo, não se torturando.</div>
+            </div>
+
+            <div class="myth-box">
+                <div class="myth">"Preciso entender tudo para seguir em frente."</div>
+                <div class="truth">→ A verdade é que muitos términos não têm uma explicação completa. Aceitar essa ambiguidade faz parte da superação.</div>
+            </div>
+
+            <div class="myth-box">
+                <div class="myth">"Pensar muito mostra profundidade."</div>
+                <div class="truth">→ Profundidade está em elaborar, aprender e seguir adiante — não em ficar preso ao sofrimento.</div>
+            </div>
+        </section>
+
+        <div class="important-box">
+            <div class="important-title">IMPORTANTE</div>
+            <p>Pensar sobre o término é um processo normal e importante da recuperação. O foco aqui é apenas <strong>diminuir a ruminação improdutiva</strong> que te mantém conectada(o) a isso de maneira excessiva, te impedindo de seguir em frente.</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Diminuindo a Ruminação</h2>
+            
+            <p>Diferente do que seus pensamentos lhe parecem informar, a diminuição da ruminação não é algo que vai acontecer conforme você chega em respostas, ou "resolve" a situação na sua cabeça. Você vai responder melhor a isso se você se colocar na direção de outros processos.</p>
+            
+            <p>Vou propor alguns exercícios para você e sugiro que você realmente tente, se possível várias vezes ao longo dos seus próximos dias ou semanas, e vá percebendo se eles podem gerar resultados para você, mesmo que inicialmente mais sutis.</p>
+
+            <div class="quote">
+                <em>Isso não exclui a necessidade de ajuda profissional individual e direcionada, mas pode ajudar.</em>
+            </div>
+        </section>
+
+        <!-- EXERCÍCIO 1 -->
+        <div class="exercise-card">
+            <h3 class="exercise-title">Exercício 1: Escrita Estruturada para Reduzir a Ruminação</h3>
+            
+            <div class="objective">
+                <strong>Objetivo:</strong> dar um espaço controlado para os pensamentos sobre o término, evitando que eles se espalhem de forma constante durante o dia.
+            </div>
+
+            <h4 class="subsection-title">Passo a passo</h4>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1.</span> <strong>Escolha um horário fixo do dia</strong> (por exemplo, final da tarde). Isso ajuda o cérebro a entender que existe um momento específico para lidar com esses pensamentos.
+                </div>
+                <div class="step">
+                    <span class="step-number">2.</span> <strong>Pegue papel e caneta</strong> (ou um arquivo no computador, bloco de notas no celular, grupo só com você no whatsapp, se preferir) e ative um cronômetro de <strong>15 minutos</strong>.
+                </div>
+                <div class="step">
+                    <span class="step-number">3.</span> <strong>Quando o cronômetro tocar, pare de escrever</strong>, mesmo que ainda tenha coisas na cabeça. Guarde o papel/arquivo em um lugar fechado.
+                </div>
+                <div class="step">
+                    <span class="step-number">4.</span> <strong>Ao terminar, faça uma transição intencional:</strong> levante-se, beba um copo d'água, caminhe alguns minutos ou se ocupe com uma tarefa prática que envolva movimentação corporal, como arrumar algo em casa, cozinhar, ou qualquer coisa que você pensar nesse sentido.
+                </div>
+                <div class="step">
+                    <span class="step-number">5.</span> <strong>Durante o restante do dia</strong>, sempre que os pensamentos voltarem, lembre-se: <em>"isso vai para o horário da escrita"</em> — e retome a atividade que estiver fazendo.
+                </div>
+            </div>
+
+            <div class="important-box">
+                <div class="important-title">Observações importantes</div>
+                <ul>
+                    <li>Nos primeiros dias é normal sentir vontade de continuar escrevendo além do tempo. O limite de 15 minutos é parte do treino para <strong>não deixar que a ruminação tome conta</strong>.</li>
+                    <li>O exercício não elimina os pensamentos imediatamente, mas <strong>ensina o cérebro a restringir o espaço que eles ocupam</strong>.</li>
+                    <li>Com o tempo, a tendência é perceber menos intensidade e frequência dos pensamentos automáticos ao longo do dia.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EXERCÍCIO 2 -->
+        <div class="exercise-card">
+            <h3 class="exercise-title">Exercício 2: Mindfulness para Redirecionar a Atenção</h3>
+            
+            <div class="objective">
+                <strong>Objetivo:</strong> Treinar a mente a perceber quando está presa em pensamentos repetitivos e trazer o foco de volta para o momento presente, reduzindo o espaço que a ruminação ocupa.
+            </div>
+
+            <h4 class="subsection-title">Passo a passo</h4>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1.</span> <strong>Encontre um lugar tranquilo</strong>, onde possa se sentar de forma confortável por <strong>5 a 10 minutos</strong>, sem interrupções.
+                </div>
+                <div class="step">
+                    <span class="step-number">2.</span> <strong>Feche os olhos ou suavize o olhar</strong>. Coloque uma mão sobre o abdômen e perceba o movimento natural da respiração.
+                </div>
+                <div class="step">
+                    <span class="step-number">3.</span> <strong>Acompanhe a respiração:</strong> inspire pelo nariz, sinta o ar entrar, e expire suavemente pela boca ou nariz. Não force o ritmo, apenas observe.
+                </div>
+                <div class="step">
+                    <span class="step-number">4.</span> <strong>Quando perceber que sua mente se perdeu em pensamentos sobre o término</strong> (lembranças, perguntas, julgamentos), <strong>note isso sem se criticar</strong> e diga mentalmente: <em>"pensamento"</em> ou <em>"ruminação"</em>.
+                </div>
+                <div class="step">
+                    <span class="step-number">5.</span> <strong>Volte a atenção para a respiração</strong> ou para uma sensação presente no corpo (como os pés apoiados no chão ou a mão sobre o abdômen).
+                </div>
+                <div class="step">
+                    <span class="step-number">6.</span> <strong>Repita esse processo</strong> quantas vezes for necessário durante os minutos do exercício. Não existe "errar" — cada vez que você volta ao presente, está treinando a mente.
+                </div>
+                <div class="step">
+                    <span class="step-number">7.</span> <strong>Ao encerrar</strong>, abra os olhos devagar e faça uma transição para a próxima atividade do dia.
+                </div>
+            </div>
+
+            <div class="important-box">
+                <div class="important-title">Observações importantes</div>
+                <ul>
+                    <li>O objetivo não é "esvaziar a mente", mas aprender a notar os pensamentos sem se prender a eles.</li>
+                    <li>Esse treino pode ser feito uma vez ao dia ou sempre que sentir que a ruminação está muito forte.</li>
+                    <li>Com prática regular, aumenta-se a capacidade de perceber os pensamentos mais cedo e reduzir o tempo gasto neles.</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h4 class="theory-title">Justificativa teórica</h4>
+                <p><strong>Ruminação como processo de manutenção:</strong> A ruminação é caracterizada por atenção autorreferida repetitiva voltada para o passado ou para perguntas insolúveis. Esse padrão mantém a ativação emocional e dificulta o processamento natural da perda.</p>
+                
+                <p><strong>Mindfulness como treinamento de metacognição:</strong> Ao praticar mindfulness, a pessoa desenvolve a habilidade de notar que está pensando, em vez de se confundir com o conteúdo do pensamento. Isso cria um espaço psicológico compatível com conceitos da Terapia de Aceitação e Compromisso (ACT).</p>
+                
+                <p><strong>Evidência empírica:</strong> Estudos de neurociência mostram que práticas curtas de mindfulness aumentam a conectividade entre redes de controle executivo e reduzem a hiperatividade da Default Mode Network, associada à ruminação.</p>
+            </div>
+        </div>
+
+        <!-- EXERCÍCIO 3 -->
+        <div class="exercise-card">
+            <h3 class="exercise-title">Exercício 3: Carta de Autocompaixão</h3>
+            
+            <div class="objective">
+                <strong>Objetivo:</strong> reduzir a autocrítica e promover apoio interno em um momento de dor emocional, usando a mesma compaixão que naturalmente oferecemos a pessoas queridas.
+            </div>
+
+            <h4 class="subsection-title">Passo a passo</h4>
+            <div class="steps">
+                <div class="step">
+                    <span class="step-number">1.</span> <strong>Encontre um ambiente calmo</strong>, onde possa escrever sem interrupções por <strong>10 a 20 minutos</strong>.
+                </div>
+                <div class="step">
+                    <span class="step-number">2.</span> Imagine que uma pessoa próxima (um amigo ou amiga de confiança) está passando pela mesma situação de término que você.
+                </div>
+                <div class="step">
+                    <span class="step-number">3.</span> Pergunte a si mesmo:
+                    <ul>
+                        <li><em>Como eu falaria com essa pessoa?</em></li>
+                        <li><em>Que palavras eu usaria para confortá-la?</em></li>
+                        <li><em>Que conselhos eu daria para ajudá-la a seguir em frente?</em></li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <span class="step-number">4.</span> Agora, <strong>escreva uma carta para si mesmo</strong>, usando esse mesmo tom compassivo e acolhedor:
+                    <ul>
+                        <li>Valide sua dor (<em>"é natural sentir isso depois de um término"</em>)</li>
+                        <li>Reforce a humanidade comum (<em>"muitas pessoas já passaram por isso e encontraram caminhos para se recuperar"</em>)</li>
+                        <li>Inclua encorajamento realista (<em>"aos poucos você vai reorganizar sua vida, mesmo que agora pareça difícil"</em>)</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <span class="step-number">5.</span> Guarde a carta em um lugar seguro. Sempre que sentir forte autocrítica ou desesperança, releia-a como um lembrete de que você merece o mesmo cuidado que daria a alguém querido.
+                </div>
+            </div>
+
+            <div class="important-box">
+                <div class="important-title">Observações importantes</div>
+                <ul>
+                    <li>O tom deve ser realista, não fantasioso; a ideia não é negar a dor, mas reconhecer e oferecer encorajamento.</li>
+                    <li>É útil repetir o exercício em diferentes momentos do processo, pois cada versão da carta pode trazer novas perspectivas.</li>
+                    <li>Para algumas pessoas, reler a carta em voz alta aumenta a sensação de acolhimento.</li>
+                </ul>
+            </div>
+
+            <div class="theory-section">
+                <h4 class="theory-title">Justificativa teórica</h4>
+                <p><strong>Autocrítica intensa</strong> é um fator que mantém o sofrimento após términos, ligada à autoestima contingente ao relacionamento.</p>
+                
+                <p><strong>A autocompaixão</strong> é apontada pela literatura como o fator protetor mais robusto para recuperação, com evidências de predição superior a outros recursos (reduz ruminação, melhora ajustamento emocional e até reduz sonhos angustiantes com o ex-parceiro).</p>
+                
+                <p>A prática ativa os três componentes centrais: <strong>bondade consigo mesmo</strong>, <strong>humanidade comum</strong> e <strong>mindfulness</strong> das emoções.</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <div class="cta-title">🎯 Material Completo Disponível</div>
+            <p>Se este conteúdo fez sentido para você e despertou seu interesse em compreender melhor o que está vivendo, preparei um <strong>material psicoeducativo completo</strong>, disponível para download.</p>
+        </div>
+
+        <footer class="footer">
+            <p><strong>Gostou deste conteúdo? 💬</strong></p>
+            <p>📲 Siga <a href="https://www.instagram.com/wagnergomespsi/" class="social-link">@wagnergomespsi</a> para mais exercícios</p>
+            <p>📤 Compartilhe nos stories e me marque — vou adorar saber o que você achou!</p>
+            
+            <p style="margin-top: 20px;"><strong>Dúvidas sobre o exercício?</strong><br>
+            Mande um DM no Instagram. Estou por aqui!</p>
+        </footer>
+    </div>
+</body>
+</html>
